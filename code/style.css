@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background: #f5f5f5;
+    background: #FDF4E3;
 }
 
 .cards {
@@ -21,11 +21,9 @@ footer {
 
 }
 
-header {
-    display: block;
-    color: black;
-    background-color: lightblue;
-}
+
+
+
 
 img {
     width: min-content;
@@ -50,7 +48,6 @@ img {
 }
 
 /* nav bar design */
-/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -85,4 +82,222 @@ img {
 
 .navbar .nav-links li a:hover {
     color: #ffcc00;
+}
+
+
+/* ===== Color palette ===== */
+:root {
+    --blue: #134686;
+    /* rgb(19, 70, 134) */
+    --red: #ED3F27;
+    /* rgb(237, 63, 39)  */
+    --amber: #FEB21A;
+    /* rgb(254, 178, 26) */
+    --cream: #FDF4E3;
+    /* rgb(253, 244, 227) */
+
+    /* One place to control ALL carousel heights */
+    --carousel-h: 320px;
+    /* change once to resize all */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+header {
+    background: var(--blue);
+    color: white;
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 .25rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+    margin: 0 .6rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+@media (max-width: 820px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.city-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    padding: 1rem;
+    border: 2px solid rgba(19, 70, 134, .08);
+}
+
+.city-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 .75rem;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    /* nothing bleeds out */
+    border-radius: 10px;
+    background: #000;
+    aspect-ratio: 16 / 9;
+    /* one ratio for ALL carousels */
+    height: auto;
+    /* let height follow width */
+}
+
+/* fallback for very old browsers without aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
+    .carousel {
+        height: var(--carousel-h);
+    }
+}
+
+.track {
+    display: flex;
+    height: 100%;
+    transition: transform .5s ease;
+}
+
+/* <figure class="slide"> resets */
+.slide {
+    margin: 0;
+    /* IMPORTANT: remove default figure margin */
+    flex: 0 0 100%;
+    /* exactly 100% width per slide */
+    height: 100%;
+    position: relative;
+}
+
+/* Images “zoom to fit” the frame without distortion */
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    /* cover = zoom to fill; crops edges a bit */
+    object-position: 50% 50%;
+    /* centered focus; tweak per-image if needed */
+}
+
+
+
+/* Arrows (brand red) */
+.ctrl {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 0;
+    cursor: pointer;
+    background: rgba(237, 63, 39, .85);
+    color: #fff;
+    font-size: 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+
+.ctrl:hover {
+    background: rgba(237, 63, 39, 1);
+}
+
+.prev {
+    left: .6rem;
+}
+
+.next {
+    right: .6rem;
+}
+
+/* Dots (cream + active blue) */
+.dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .5rem;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(253, 244, 227, .6);
+    border: 2px solid rgba(0, 0, 0, .15);
+    cursor: pointer;
+}
+
+
+
+
+.video-banner {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.city-page section {
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    max-width: 900px;
+    border-left: 5px solid #ED3F27;
+    background: #FDF4E3;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.city-page h2 {
+    color: #134686;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #FEB21A;
+    padding-bottom: 0.3rem;
+}
+
+.city-page p {
+    line-height: 1.6;
+    color: #134686;
+    margin-bottom: 1rem;
+}
+
+.city-page iframe {
+    display: block;
+    margin: 2rem auto;
+    border: 3px solid #FEB21A;
+    border-radius: 10px;
 }
