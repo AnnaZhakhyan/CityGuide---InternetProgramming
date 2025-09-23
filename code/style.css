@@ -12,18 +12,14 @@ body {
 }
 
 footer {
-    text-align: center;
-    padding: 3px;
-    background-color: DarkSalmon;
-    color: white;
-    display: block;
+    display: flex;
+    justify-content: space-around;
 
+    color: #fff;
+    padding: 20px;
+    background-color: #134686;
 
 }
-
-
-
-
 
 img {
     width: min-content;
@@ -113,12 +109,16 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin: 0 0 .25rem;
-    font-weight: 700;
+h1 {
     font-family: 'Playfair Display', serif;
-
+    color: #134686;
+    font-size: 3rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
+
 
 nav a {
     color: var(--cream);
@@ -257,9 +257,7 @@ nav a:hover {
     cursor: pointer;
 }
 
-
-
-
+/* City page section styling */
 .video-banner {
     width: 100%;
     height: 200px;
@@ -301,16 +299,51 @@ nav a:hover {
     border: 3px solid #FEB21A;
     border-radius: 10px;
 }
-table{
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        th, td{
-            border: 1px solid #aaa;
-            padding: 8px;
-            text-align: left;
-        }
-        th{
-            background-color: #eee;
-        }
+
+/* Gallery container for images */
+.city-gallery {
+    display: flex;
+    gap: 1rem;
+    /* space between images */
+    flex-wrap: wrap;
+    /* allow wrapping on smaller screens */
+    justify-content: center;
+    /* center images horizontally */
+    margin-top: 1rem;
+}
+
+.city-gallery img {
+    width: 250px;
+    /* fixed width for consistency */
+    height: 200px;
+    /* fixed height for uniformity */
+    object-fit: cover;
+    /* crop without stretching */
+    border-radius: 10px;
+    /* rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.city-gallery img:hover {
+    transform: scale(1.05);
+    /* a little zoom when hovering */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #aaa;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}

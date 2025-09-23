@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rio de Janeiro Guide</title>
+    <title>Rio de Janeiro Guide</title> <!-- change title here -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-
-    <!-- Navigation Bar -->
+    <!-- navigation Bar -->
     <nav class="navbar">
         <div class="logo">City Guide</div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Cities</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+
         </ul>
     </nav>
 
@@ -25,12 +26,12 @@
     <!-- Video Banner -->
     <div class="video-banner">
         <video autoplay muted loop>
-             <source src="rio.mp4" type="video/mp4"> <!--add your own videos here -->
+            <source src="rio.mp4" type="video/mp4"> <!--add your own videos here -->
             Your browser does not support the video tag.
         </video>
     </div>
     <h1>Rio de Janeiro</h1>
-    <!-- City Page Content -->
+    <!-- City Page Content, change according tp your city -->
     <div class="city-page">
 
         <section>
@@ -53,6 +54,11 @@
                 stretches of sand in the world. If you're a sports fan, don’t miss <strong>Maracanã Stadium</strong>, a
                 historic football arena that has hosted World Cup finals and Olympic events.
             </p>
+            <div class="city-gallery">
+                <img src="christ.jpeg" alt="christ image">
+                <img src="beach.jpg" alt="beach image">
+                <img src="mountain.jpg" alt="mountain image">
+            </div>
         </section>
 
         <section>
@@ -63,6 +69,13 @@
                 <em>pão de queijo</em> (cheese bread). On hot days, cool down with an <em>açaí bowl</em> or sip a
                 refreshing <em>caipirinha</em>, Brazil’s most famous cocktail.
             </p>
+            <!-- Replace with your own images -->
+
+            <div class="city-gallery">
+                <img src="feijoada.jpeg" alt="feijoada image">
+                <img src="pao.jpg" alt="pao image">
+                <img src="acai.jpg" alt="acai bowl image">
+            </div>
         </section>
 
         <section>
@@ -72,6 +85,11 @@
                 lively nightlife in neighborhoods like <strong>Lapa</strong>. The highlight of the year is the
                 <strong>Carnival</strong>, a world-famous celebration of parades, costumes, and samba schools.
             </p>
+            <div class="city-gallery">
+                <img src="carnival1.jpeg" alt="carnival image">
+                <img src="carnival2.jpeg" alt="carnival image">
+                <img src="carnival3.jpg" alt="carnival image">
+            </div>
         </section>
 
         <section>
@@ -86,6 +104,7 @@
 
         <section>
             <h2>Explore on the Map</h2>
+            <!--replace with your own map location by going to google maps, selecting a location, clicking share, embed a map-->
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.9541406239982!2d-43.21306212452851!3d-22.951915979223294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997fd5984aa13f%3A0x9dc984d7019502de!2sChrist%20the%20Redeemer!5e0!3m2!1sen!2skr!4v1758596669415!5m2!1sen!2skr"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
