@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">City Guide</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+
+        </ul>
+    </nav>
+    
+
+
+<main>
+  <section class="grid" aria-label="Four city carousels">
+    <!-- ==== Singapore ==== -->
+    <article class="city-card">
+      <div class="city-head">
+        <h2 class="city-title">Singapore</h2>
+
+      </div>
+      <div class="carousel" id="car-singapore" aria-roledescription="carousel" aria-label="Singapore photos">
+        <div class="track"></div>
+        <button class="ctrl prev" aria-label="Previous">&#10094;</button>
+        <button class="ctrl next" aria-label="Next">&#10095;</button>
+        <div class="dots" aria-label="Slide indicators"></div>
+      </div>
+    </article>
+
+    <!-- ==== Rio ==== -->
+    <article class="city-card">
+      <div class="city-head">
+        <h2 class="city-title">Rio de Janeiro</h2>
+      </div>
+      <div class="carousel" id="car-rio" aria-roledescription="carousel" aria-label="Rio de Janeiro photos">
+        <div class="track"></div>
+        <button class="ctrl prev" aria-label="Previous">&#10094;</button>
+        <button class="ctrl next" aria-label="Next">&#10095;</button>
+        <div class="dots" aria-label="Slide indicators"></div>
+      </div>
+    </article>
+
+    <!-- ==== London ==== -->
+    <article class="city-card">
+      <div class="city-head">
+        <h2 class="city-title">London</h2>
+      </div>
+      <div class="carousel" id="car-london" aria-roledescription="carousel" aria-label="London photos">
+        <div class="track"></div>
+        <button class="ctrl prev" aria-label="Previous">&#10094;</button>
+        <button class="ctrl next" aria-label="Next">&#10095;</button>
+        <div class="dots" aria-label="Slide indicators"></div>
+      </div>
+    </article>
+
+    <!-- ==== Chongqing ==== -->
+    <article class="city-card">
+      <div class="city-head">
+        <h2 class="city-title">Chongqing</h2>
+      </div>
+      <div class="carousel" id="car-chongqing" aria-roledescription="carousel" aria-label="Chongqing photos">
+        <div class="track"></div>
+        <button class="ctrl prev" aria-label="Previous">&#10094;</button>
+        <button class="ctrl next" aria-label="Next">&#10095;</button>
+        <div class="dots" aria-label="Slide indicators"></div>
+      </div>
+    </article>
+  </section>
+</main>
+
+
+
+
+
+<script>
+  /* ===== Configure your 4 cities (images go in /images/) ===== */
+  const CAROUSELS = [
+    {
+      id: "car-singapore",
+      slides: [
+        { src: "MBSbet.jpg", alt: "Marina Bay Sands and skyline" },  // NOTE: path differs from others
+        { src: "super trees.jpg", alt: "Gardens by the Bay Supertrees at night" },
+        { src: "jewel.jpg", alt: "Changi Airport Jewel" },
+        { src: "CPQ.jpg", alt: "Chinatown" },
+        { src: "SGshophouse.jpg", alt: "Shop houses" },
+      ],
+    },
+    {
+      id: "car-rio",
+      slides: [
+        { src: "images/rio1.jpg", alt: "Christ the Redeemer statue", caption: "Christ the Redeemer" },
+        { src: "images/rio2.jpg", alt: "Copacabana beach shoreline", caption: "Copacabana" },
+        { src: "images/rio3.jpg", alt: "Sugarloaf Mountain cable car", caption: "Sugarloaf" },
+        { src: "images/rio2.jpg", alt: "Copacabana beach shoreline", caption: "Copacabana" },
+        { src: "images/rio3.jpg", alt: "Sugarloaf Mountain cable car", caption: "Sugarloaf" },
+      ],
+    },
+    {
+      id: "car-london",
+      slides: [
+        { src: "images/london1.jpg", alt: "Tower Bridge over the Thames", caption: "Tower Bridge" },
+        { src: "images/london2.jpg", alt: "Elizabeth Tower (Big Ben) and Westminster", caption: "Big Ben" },
+        { src: "images/london3.jpg", alt: "London Eye and South Bank", caption: "London Eye" },
+        { src: "images/rio2.jpg", alt: "Copacabana beach shoreline", caption: "Copacabana" },
+        { src: "images/rio3.jpg", alt: "Sugarloaf Mountain cable car", caption: "Sugarloaf" },
+      ],
+    },
+    {
+      id: "car-chongqing",
+      slides: [
+        { src: "images/chongqing1.jpg", alt: "Hongya Cave lit at night", caption: "Hongya Cave" },
+        { src: "images/chongqing2.jpg", alt: "City skyline with confluence of rivers", caption: "Two Rivers" },
+        { src: "images/chongqing3.jpg", alt: "Yangtze River cable car", caption: "Cable Car" },
+        { src: "images/rio2.jpg", alt: "Copacabana beach shoreline", caption: "Copacabana" },
+        { src: "images/rio3.jpg", alt: "Sugarloaf Mountain cable car", caption: "Sugarloaf" },
+      ],
+    },
+  ];
+
+  /* ===== Reusable, dependency-free carousel (NO AUTOPLAY) ===== */
+  // CHANGE #1: default autoplayMs = 0 (no auto movement)
+  function initCarousel(container, slides, { autoplayMs = 0 } = {}) {
+    const track   = container.querySelector(".track");
+    const dots    = container.querySelector(".dots");
+    const prevBtn = container.querySelector(".prev");
+    const nextBtn = container.querySelector(".next");
+
+    // Build slides & dots
+    slides.forEach((s, i) => {
+      const fig = document.createElement("figure");
+      fig.className = "slide";
+      fig.innerHTML = `
+        <img src="${s.src}" alt="${s.alt}">
+        <figcaption class="caption">${s.caption ?? ""}</figcaption>
+      `;
+      track.appendChild(fig);
+
+      const dot = document.createElement("button");
+      dot.className = "dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Go to slide ${i+1}`);
+      dot.addEventListener("click", () => goTo(i));
+      dots.appendChild(dot);
+    });
+
+    let index = 0;
+    let timer = null; // kept but unused since autoplay is off
+
+    function update(){
+      track.style.transform = `translateX(${-index * 100}%)`;
+      [...dots.children].forEach((d, i) =>
+        d.setAttribute("aria-current", i === index ? "true" : "false")
+      );
+    }
+    function goTo(i){
+      index = (i + slides.length) % slides.length;
+      update();
+      // CHANGE #2: no restartAutoplay() call
+    }
+    function next(){ goTo(index + 1); }
+    function prev(){ goTo(index - 1); }
+
+    prevBtn.addEventListener("click", prev);
+    nextBtn.addEventListener("click", next);
+
+    // CHANGE #3: remove autoplay listeners entirely
+    // (no mouseenter/leave, no focus in/out, no setInterval)
+
+    update();
+    // CHANGE #4: do NOT call startAutoplay()
+    return { goTo, next, prev };
+  }
+
+  // Initialize all 4 carousels
+  CAROUSELS.forEach(({ id, slides }) => {
+    const el = document.getElementById(id);
+    initCarousel(el, slides, { autoplayMs: 0 }); // explicit off (redundant but clear)
+  });
+</script>
+
+</body>
+</html>
