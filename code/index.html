@@ -2,73 +2,71 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Guide</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Guide</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">City Guide</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
+  <!-- navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">City Guide</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
 
-    <video
-      class="video"
-      src="images\video.mp4"
-      autoplay
-      muted
-      loop
-      link
-    ></video>
-      <h1>Explore Our Top Travel Destinations</h1>
+  <video class="video" src="images\video.mp4" autoplay muted loop link></video>
+  <h1>Explore Our Top Travel Destinations</h1>
   <div class="countries">
 
-  <div class="country-card">
-    <img src="images\singapore1.jpeg" alt="Singapore" />
-    <h2>Singapore</h2>
-    <p>
-      A modern city-state where tradition meets innovation. Explore Marina Bay Sands, Gardens by the Bay, vibrant hawker centers, and multicultural neighborhoods all in one trip.
-    </p>
-    <button onclick="location.href='Schedule.html'">See Schedule</button>
+    <div class="country-card" onclick="location.href='Singaporepage.html'">
+      <img src="images\singapore1.jpeg" alt="Singapore" />
+      <h2>Singapore</h2>
+      <p>
+        A modern city-state where tradition meets innovation. Explore Marina Bay Sands, Gardens by the Bay, vibrant
+        hawker centers, and multicultural neighborhoods all in one trip.
+      </p>
+      <button onclick="event.stopPropagation(); location.href='Schedule.html'">See Schedule</button>
+    </div>
+
+    <div class="country-card" onclick="location.href='Chongqingpage.html'">
+      <img src="images\chongqing.jpeg" alt="Chongqing" />
+
+      <h2>Chongqing</h2>
+      <p>
+        Known as the “Mountain City” of China, Chongqing is famous for its hotpot, breathtaking Yangtze River views,
+        dramatic night skyline, and rich cultural heritage.
+      </p>
+      <button onclick="event.stopPropagation(); location.href='Schedule.html'">See Schedule</button>
+    </div>
+
+    <div class="country-card" onclick="location.href='Riopage.html'"> <!-- card taking you to the city page here -->
+      <img src="images\rio.jpeg" alt="Rio de Janeiro" />
+      <h2>Rio de Janeiro</h2>
+      <p>
+        Dance to the rhythm of samba, visit the iconic Christ the Redeemer, relax on Copacabana beach, and feel the
+        energy of Brazil’s carnival capital.
+      </p>
+      <button onclick="event.stopPropagation(); location.href='Schedule.html'">See Schedule</button>
+    </div>
+
+    <div class="country-card" onclick="location.href='Londonpage.html'">
+      <img src="images\london.jpg" alt="London" />
+      <h2>London</h2>
+      <p>
+        Step into a city full of history and modern charm. See Big Ben, Buckingham Palace, West End shows, and explore
+        diverse neighborhoods with global flavors.
+      </p>
+      <button onclick="event.stopPropagation(); location.href='Schedule.html'">See Schedule</button>
+    </div>
   </div>
 
-  <div class="country-card">
-    <img src="images\chongqing.jpeg" alt="Chongqing" />
-    <h2>Chongqing</h2>
-    <p>
-      Known as the “Mountain City” of China, Chongqing is famous for its hotpot, breathtaking Yangtze River views, dramatic night skyline, and rich cultural heritage.
-    </p>
-    <button onclick="location.href='Schedule.html'">See Schedule</button>
-  </div>
-
-  <div class="country-card">
-    <img src="images\rio.jpeg" alt="Rio de Janeiro" />
-    <h2>Rio de Janeiro</h2>
-    <p>
-      Dance to the rhythm of samba, visit the iconic Christ the Redeemer, relax on Copacabana beach, and feel the energy of Brazil’s carnival capital.
-    </p>
-    <button onclick="location.href='Schedule.html'">See Schedule</button>
-  </div>
-
-  <div class="country-card">
-    <img src="images\london.jpg" alt="London" />
-    <h2>London</h2>
-    <p>
-      Step into a city full of history and modern charm. See Big Ben, Buckingham Palace, West End shows, and explore diverse neighborhoods with global flavors.
-    </p>
-    <button onclick="location.href='Schedule.html'">See Schedule</button>
-  </div>
-</div>
-
-  </body>
+</body>
 
 </html>
