@@ -349,6 +349,13 @@ table {
     border-collapse: collapse;
     margin-top: 10px;
 }
+thead tr {
+    font-weight: normal;
+}
+tbody tr {
+    font-weight: 300;
+    font-size: small;
+}
 
 th,
 td {
