@@ -407,3 +407,35 @@ th {
 .country-card button:hover {
   background: #005fa3;
 }
+/* Team Section */
+.about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .team-photo {
+    max-width: 60%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    margin-bottom: 1.5rem;
+  }
+  
+  .team-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .team-section p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 auto;
+  }
+  
