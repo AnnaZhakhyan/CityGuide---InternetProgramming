@@ -5,6 +5,7 @@
 Thomas - Documentation, developement
 Anna - Development, design, unit testing
 Cat - Development, design
+Nathan - Development, design
 
 ### Week 1 : 
 - Documentation (use case scenarios, requirements)
