@@ -57,8 +57,7 @@ All information presented on CityGuide was carefully compiled from reliable sour
 - **HTML5** – for semantic structure and content organization  
 - **CSS3** – for layout, styling, and responsiveness  
 - **Images** – to visually represent each city and its culture  
-> ⚠️ No JavaScript or external frameworks were used in this project.
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
